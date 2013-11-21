@@ -1,0 +1,10 @@
+f:\dev\AngularMenu\AngularMenu\bin\AngularMenu.dll
+f:\dev\AngularMenu\AngularMenu\bin\AngularMenu.pdb
+f:\dev\AngularMenu\AngularMenu\bin\Nancy.dll
+f:\dev\AngularMenu\AngularMenu\bin\Nancy.Hosting.Self.dll
+f:\dev\AngularMenu\AngularMenu\obj\Debug\AngularMenu.csprojResolveAssemblyReference.cache
+f:\dev\AngularMenu\AngularMenu\obj\Debug\AngularMenu.dll
+f:\dev\AngularMenu\AngularMenu\obj\Debug\AngularMenu.pdb
+f:\dev\AngularMenu\AngularMenu\bin\Nancy.ViewEngines.Razor.dll
+f:\dev\AngularMenu\AngularMenu\bin\System.Web.Razor.Unofficial.dll
+f:\dev\AngularMenu\AngularMenu\bin\System.Web.Razor.Unofficial.pdb
