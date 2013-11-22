@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Configuration;
+using System.Collections.Generic;
 
 namespace ConfigurationSection_Testable_and_Maintainable
 {
@@ -9,6 +9,6 @@ namespace ConfigurationSection_Testable_and_Maintainable
         string Name { get; }
         DayOfWeek DayOfBirth { get; }
 
-        CommaDelimitedStringCollection MyStrings { get; }
+        IEnumerable<string> MyStrings { get; }
     }
 }

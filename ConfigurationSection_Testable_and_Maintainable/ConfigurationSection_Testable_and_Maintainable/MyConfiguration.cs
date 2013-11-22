@@ -1,7 +1,9 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
+using System.Linq;
 
 namespace ConfigurationSection_Testable_and_Maintainable
 {
@@ -45,11 +47,11 @@ namespace ConfigurationSection_Testable_and_Maintainable
 
         [ConfigurationProperty("MyStrings", IsRequired = true)]
         [TypeConverter(typeof(CommaDelimitedStringCollectionConverter))]
-        public CommaDelimitedStringCollection MyStrings
+        public IEnumerable<string> MyStrings
         {
             get
             {
-                return (CommaDelimitedStringCollection)this["MyStrings"];
+                return ((CommaDelimitedStringCollection)this["MyStrings"]).Cast<string>();
             }
         }
     }
