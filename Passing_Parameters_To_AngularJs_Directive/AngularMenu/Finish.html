@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="AngularMenu">
+<head>
+    <title>Passing parameters to angularjs directive</title>
+    <style type="text/css">
+        .selected {
+            font-weight: bold;
+        }
+
+        .menu > ul > li {
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="AngularMenuCtrl">
+        <menu title="Menu" items="items" click="AlertTransition(index)"/>
+    </div>
+</body>
+
+<script type="text/ng-template" id="/Menu.html">
+		<div class="menu">
+            <span>{{title}}</span>
+            <ul>
+                <li ng-repeat="item in items" ng-class="{selected: $index==selectedIndex}" ng-click="Click($index)">
+                    {{item.Text}}
+                </li>
+            </ul>
+        </div>
+</script>
+
+<script type="text/javascript">
+    angular.module('AngularMenu', [])
+    .controller('AngularMenuCtrl', function ($scope) {
+        $scope.items = [
+                    { Text: 'Item 1', Value: 'Url1' },
+                    { Text: 'Item 2', Value: 'Url2' }
+        ];
+
+        $scope.AlertTransition = function (index) {
+            alert("Transitioning to " + $scope.items[index].Value);
+        };
+    })
+    .directive("menu", function () {
+        return {
+            restrict: 'E',
+            templateUrl: '/Menu.html',
+            scope: {
+                title: '@',
+                items: '=',
+                click: '&'
+            },
+            link: function (scope) {
+                scope.Click = function (index) {
+                    scope.selectedIndex = index;
+                    scope.click({ index: index });
+                };
+            }
+        };
+    });
+</script>
+</html>
