@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.angularjs.org/1.2.15/angular.js"></script>
+</head>
+
+<body ng-app="MessageBusApp">
+<div ng-controller="MainCtrl">
+    Name: <span>{{ConfiguredName}}</span>
+    <br/>
+    <div ng-controller="ChildCtrl">
+        Set Name:
+        <input type="text" ng-model="Name"/>
+        <button ng-click="Go(Name)">Go!</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    angular.module("MessageBusApp", [])
+            .controller("MainCtrl", function ($rootScope, $scope) {
+                $rootScope.$on('SayHello', function (event, name) {
+                    $scope.ConfiguredName=name;
+                });
+            })
+            .controller("ChildCtrl", function ($rootScope, $scope) {
+                $scope.Go = function (name) {
+                    $rootScope.$emit('SayHello', name);
+                }
+            });
+</script>
+</body>
+</html>
