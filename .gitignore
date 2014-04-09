@@ -1,1 +1,12 @@
 ConfigurationSection_Testable_and_Maintainable/.nuget/NuGet.exe
+*.user
+*.ncrunchproject
+*.ncrunchsolution
+*.suo
+*.dll
+*.pdb
+obj/
+
+# Nuget
+packages/
+!packages/repositories.config
