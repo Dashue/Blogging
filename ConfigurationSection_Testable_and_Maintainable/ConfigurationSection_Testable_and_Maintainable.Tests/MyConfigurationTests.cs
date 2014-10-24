@@ -22,8 +22,10 @@ namespace ConfigurationSection_Testable_and_Maintainable.Tests
             Assert.Equal("Value3", configuration.MyStrings.ElementAt(2));
 
             Assert.Equal(2, configuration.MyList.Count);
-            Assert.Equal("Value1", configuration.MyList[0]);
-            Assert.Equal("Value2", configuration.MyList[1]);
+            Assert.Equal("Server1", configuration.MyList[0].Server);
+            Assert.Equal(80, configuration.MyList[0].Port);
+            Assert.Equal("Server2", configuration.MyList[1].Server);
+            Assert.Equal(88, configuration.MyList[1].Port);
         }
     }
 }
