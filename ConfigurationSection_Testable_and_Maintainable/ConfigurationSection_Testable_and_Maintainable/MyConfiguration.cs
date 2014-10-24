@@ -49,7 +49,7 @@ namespace ConfigurationSection_Testable_and_Maintainable
             get { return ((ConnectionCollection)this["Connections"]); }
         }
 
-        public List<ConnectionEntry> MyList
+        public List<ConnectionEntry> MyConnections
         {
             get { return ConnectionCollection.Cast<ConnectionEntry>().ToList(); }
         }

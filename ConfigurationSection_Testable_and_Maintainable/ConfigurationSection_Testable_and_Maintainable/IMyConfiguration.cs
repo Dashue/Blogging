@@ -10,6 +10,6 @@ namespace ConfigurationSection_Testable_and_Maintainable
         DayOfWeek DayOfBirth { get; }
 
         IEnumerable<string> MyStrings { get; }
-        List<ConnectionEntry> MyList { get; }
+        List<ConnectionEntry> MyConnections { get; }
     }
 }
